@@ -1,3 +1,20 @@
+import { useTheme } from '../ThemeProvider';
+import { Button } from 'react-native-paper';
+
+const HomeScreen = () => {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
+      <Button mode="contained" onPress={toggleTheme}>
+        Toggle Theme
+      </Button>
+    </View>
+  );
+};
+
+
+
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
 import { fetchCountries } from '../services/api';
@@ -52,3 +69,6 @@ const styles = StyleSheet.create({
 });
 
 export default HomeScreen;
+
+
+
