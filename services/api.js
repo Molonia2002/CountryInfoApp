@@ -16,3 +16,20 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+
+import { useTheme } from '../ThemeProvider';
+import { Button } from 'react-native-paper';
+
+const HomeScreen = () => {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
+      <Button mode="contained" onPress={toggleTheme}>
+        Toggle Theme
+      </Button>
+    </View>
+  );
+};
+
